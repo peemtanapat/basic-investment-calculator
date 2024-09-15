@@ -1,5 +1,5 @@
 import { Fragment, useState } from "react";
-import InvestmentInput from "./components/InvestmentInput";
+import InputContainer from "./components/InputContainer";
 import Header from "./components/Header";
 import ResultTable from "./components/ResultTable";
 import { calculateInvestmentResults } from "./util/investment";
@@ -20,7 +20,7 @@ function App() {
   return (
     <Fragment>
       <Header />
-      <InvestmentInput
+      <InputContainer
         setInitialInvestment={setInitialInvestment}
         setAnnualInvestment={setAnnualInvestment}
         setExpectedReturn={setExpectedReturn}
