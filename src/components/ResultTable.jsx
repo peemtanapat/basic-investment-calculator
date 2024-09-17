@@ -14,7 +14,7 @@ export default function ResultTable({ annualData }) {
         <tbody>
           {annualData.map((row) => {
             return (
-              <tr>
+              <tr key={row.year}>
                 <td>{row.year}</td>
                 <td>{row.annualInvestment}</td>
                 <td>{row.interest}</td>
