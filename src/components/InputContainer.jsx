@@ -16,8 +16,9 @@ export default function InputContainer({
       <UserInput
         label="ANNUAL EXPECTED RETURN(%)"
         handleOnChange={setExpectedReturn}
+        maxLength={5}
       />
-      <UserInput label="PERIOD(YEAR)" handleOnChange={setDuration} />
+      <UserInput label="PERIOD(YEAR)" handleOnChange={setDuration} maxLength={2} />
     </div>
   );
 }

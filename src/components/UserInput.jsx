@@ -1,10 +1,12 @@
 import { useState } from "react";
 
-export default function UserInput({ label, handleOnChange }) {
+export default function UserInput({ label, handleOnChange, maxLength = 17 }) {
   const [value, setValue] = useState(0)
 
   function handleNumber(e) {
-    const rawValue = e.target.value;
+    let rawValue = e.target.value;
+    rawValue = rawValue === '' ? '0' : rawValue
+
     const formatted = format(rawValue)
 
     setValue(formatted)
@@ -28,6 +30,7 @@ export default function UserInput({ label, handleOnChange }) {
       <input
         type="text"
         value={value}
+        maxLength={maxLength}
         onChange={handleNumber}
       />
     </div>

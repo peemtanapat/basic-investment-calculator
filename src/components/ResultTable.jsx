@@ -4,11 +4,11 @@ export default function ResultTable({ annualData }) {
       <table>
         <thead>
           <tr>
-            <th>Year</th>
-            <th>Investment Value</th>
-            <th>Interest (Year)</th>
-            <th>Total Interest</th>
-            <th>Total</th>
+            <th style={{ width: '50px' }}>Year</th>
+            <th style={{ width: '150px' }}>Investment Value</th>
+            <th style={{ width: '150px' }}>Interest (Year)</th>
+            <th style={{ width: '150px' }}>Total Interest</th>
+            <th style={{ width: '150px' }}>Total</th>
           </tr>
         </thead>
         <tbody>
