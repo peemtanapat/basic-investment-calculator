@@ -1,14 +1,28 @@
-export default function ResultTable({ annualData }) {
+import { calculateInvestmentResults } from "../util/investment";
+
+export default function ResultTable({
+  initialInvestment,
+  annualInvestment,
+  expectedReturn,
+  duration,
+}) {
+  const annualData = calculateInvestmentResults({
+    initialInvestment,
+    annualInvestment,
+    expectedReturn,
+    duration,
+  });
+
   return (
     <div id="result">
       <table>
         <thead>
           <tr>
-            <th style={{ width: '50px' }}>Year</th>
-            <th style={{ width: '150px' }}>Investment Value</th>
-            <th style={{ width: '150px' }}>Interest (Year)</th>
-            <th style={{ width: '150px' }}>Total Interest</th>
-            <th style={{ width: '150px' }}>Total</th>
+            <th style={{ width: "50px" }}>Year</th>
+            <th style={{ width: "150px" }}>Investment Value</th>
+            <th style={{ width: "150px" }}>Interest (Year)</th>
+            <th style={{ width: "150px" }}>Total Interest</th>
+            <th style={{ width: "150px" }}>Total</th>
           </tr>
         </thead>
         <tbody>
