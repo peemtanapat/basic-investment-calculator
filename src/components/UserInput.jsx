@@ -1,31 +1,31 @@
 import { useState } from "react";
 
 export default function UserInput({ label, handleOnChange, maxLength = 17 }) {
-  const [value, setValue] = useState(0)
+  const [value, setValue] = useState(0);
 
   function handleNumber(e) {
     let rawValue = e.target.value;
-    rawValue = rawValue === '' ? '0' : rawValue
+    rawValue = rawValue === "" ? "0" : rawValue;
 
-    const formatted = format(rawValue)
+    const formatted = format(rawValue);
 
-    setValue(formatted)
+    setValue(formatted);
 
-    const deFormatted = deFormat(formatted)
+    const deFormatted = deFormat(formatted);
 
-    handleOnChange(parseInt(deFormatted))
+    handleOnChange(parseInt(deFormatted));
   }
 
   function format(input) {
-    return parseInt(deFormat(input)).toLocaleString()
+    return parseInt(deFormat(input)).toLocaleString();
   }
 
   function deFormat(input) {
-    return input.replaceAll(',', '')
+    return input.replaceAll(",", "");
   }
 
   return (
-    <div id="user-input">
+    <div>
       <label>{label}</label>
       <input
         type="text"
