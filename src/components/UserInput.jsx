@@ -37,7 +37,7 @@ export default function UserInput({
         value={value}
         maxLength={maxLength}
         onChange={handleNumber}
-        required
+        required={required}
       />
     </div>
   );
