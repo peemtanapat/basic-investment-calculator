@@ -14,6 +14,12 @@ function App() {
   const [expectedReturn, setExpectedReturn] = useState(0);
   const [duration, setDuration] = useState(0);
 
+  const isValidInput =
+    initialInvestment >= 1 &&
+    annualInvestment >= 1 &&
+    expectedReturn >= 1 &&
+    duration >= 1;
+
   return (
     <Fragment>
       <Header />
@@ -23,12 +29,15 @@ function App() {
         setExpectedReturn={setExpectedReturn}
         setDuration={setDuration}
       />
-      <ResultTable
-        initialInvestment={initialInvestment}
-        annualInvestment={annualInvestment}
-        expectedReturn={expectedReturn}
-        duration={duration}
-      />
+      {!isValidInput && <p className="center">Please enter the valid number</p>}
+      {isValidInput && (
+        <ResultTable
+          initialInvestment={initialInvestment}
+          annualInvestment={annualInvestment}
+          expectedReturn={expectedReturn}
+          duration={duration}
+        />
+      )}
     </Fragment>
   );
 }
